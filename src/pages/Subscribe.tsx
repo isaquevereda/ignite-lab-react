@@ -2,7 +2,7 @@ import { useState, FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import { Footer } from "../components/Footer";
 import { Logo } from "../components/Logo";
-import { useCreateSubscriberMutation } from "../graphql/generated";
+import { useCreateSubscriberMutation, useGetImageQuery } from "../graphql/generated";
 
 export function Subscribe() {
 
@@ -24,7 +24,13 @@ export function Subscribe() {
         })
         navigate('/event')
     }
-    
+
+    const { data } = useGetImageQuery({
+        variables:{
+            page: 'Subscriber'
+        }
+    })
+
     return (
         <div>
             <div className="min-h-screen bg-blur bg-cover bg-no-repeat flex flex-col items-center">
@@ -65,7 +71,13 @@ export function Subscribe() {
                     </div>
                 </div>
 
-                <img src="./src/assets/code-mockup.png" className="mt-10" />   
+                {data?.images.map(image => {
+                    return(
+                        <img src={image.image?.url} className="mt-10" />   
+                    )
+                })
+                    
+                }
             </div>
             <Footer/>
         </div>

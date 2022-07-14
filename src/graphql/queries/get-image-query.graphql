@@ -1,0 +1,12 @@
+query GetImage ($page: String){
+   images (where: {page: $page}){
+    id
+    name
+    page
+    image {
+      height
+      width
+      url
+    }
+  }
+}
