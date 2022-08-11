@@ -38,11 +38,10 @@ export function Subscribe() {
                     <div className="max-w-[640px]">
                         <Logo/>
                         <h1 className="mt-8 text-[2.5rem] leading-tight">
-                            Construa uma <strong className="text-blue-500">aplicação completa</strong>, do zero, com <strong className="text-blue-500">React</strong>
+                            Aprenda já como editar seus videos com <strong className="text-blue-500">Adobe Premiere Pro</strong>, do zero, ao <strong className="text-blue-500">conhecimento</strong>
                         </h1>
                         <p className="mt-4 text-gray-200 leading-relaxed">
-                            Em apenas uma semana você vai dominar na prática uma das tecnologias mais utilizadas 
-                            e com alta demanda para acessar as melhores oportunidades do mercado.
+                            Em apenas uma semana você irá dominar as melhores práticas para edição de videos, não deixe de se increver para este evento gratuito.
                         </p>
                     </div>
                     <div className="p-8 bg-gray-700 border border-gray-500 rounded">
@@ -73,7 +72,7 @@ export function Subscribe() {
 
                 {data?.images.map(image => {
                     return(
-                        <img src={image.image?.url} className="mt-10" />   
+                        <img src={image.image?.url} className="m-8 w-7/12 opacity-25" />   
                     )
                 })
                     
